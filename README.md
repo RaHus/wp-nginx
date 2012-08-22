@@ -20,6 +20,8 @@ try_files $uri $uri/ /wp-content/blogs.dir/direct/$http_host/$uri /index.php;
 
 will try to serve the files directly. if not possible will pass the request to the backend (apache,phpfpm)
 
+Similar functionality can be achieved with X-Accel-Redirect header, which is cleaner but slower.
+
 
 *The script must be run every time the mapping of hostname --> id changes (rare), or when
 a new blog is created. typically i put it to run every sunday or every day at night.
